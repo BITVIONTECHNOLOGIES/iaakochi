@@ -46,7 +46,7 @@ export function CourseFeature() {
                 alt={course.imageAlt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 55vw"
-                className="object-cover"
+                className={`object-cover ${course.imagePosition ?? "object-center"}`}
               />
             </motion.div>
             <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/55 via-transparent to-transparent" />

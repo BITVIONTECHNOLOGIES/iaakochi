@@ -90,7 +90,7 @@ export function AboutSection() {
 
         {/* Right column — high-clarity certificate */}
         <motion.div
-          className="relative mx-auto w-full max-w-lg lg:max-w-none"
+          className="relative mx-auto w-full max-w-xl lg:max-w-none"
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -102,14 +102,14 @@ export function AboutSection() {
           />
 
           <div className="relative rounded-3xl border border-white/15 bg-gradient-to-b from-white/15 to-white/5 p-3 shadow-[0_20px_50px_rgba(0,0,0,0.8)] backdrop-blur-xl transition-all duration-500 sm:p-4 lg:rotate-1 lg:hover:rotate-0">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[#f7f6f1] sm:aspect-[5/6]">
+            <div className="relative aspect-[1024/723] overflow-hidden rounded-2xl bg-[#f7f4ea]">
               <Image
-                src="/images/certificate.jpg"
-                alt="IAA Certificate of Professional Competence"
+                src="/images/iaa-certificate.jpg"
+                alt="IAA Certificate of Course Completion — Clinical Cosmetology Assistant"
                 fill
-                quality={78}
-                sizes="(max-width: 1024px) 90vw, 520px"
-                className="object-cover object-center"
+                quality={90}
+                sizes="(max-width: 1024px) 92vw, 640px"
+                className="object-contain object-center"
               />
               <div
                 className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/5"

@@ -18,7 +18,7 @@ export function CoursePageView({ course }: { course: Course }) {
           fill
           priority
           sizes="100vw"
-          className="object-cover opacity-55"
+          className={`object-cover opacity-55 ${course.imagePosition ?? "object-center"}`}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/80 to-zinc-950/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/70 via-transparent to-black/40" />
@@ -55,7 +55,7 @@ export function CoursePageView({ course }: { course: Course }) {
           </dl>
           <div className="mt-10 flex flex-wrap gap-3">
             <Link
-              href="/contact"
+              href="/contact#enquiry"
               className="rounded-full bg-[var(--iaa-turquoise)] px-6 py-2.5 text-[0.68rem] font-semibold tracking-[0.16em] text-[var(--iaa-black)] uppercase"
             >
               Enquire now
@@ -129,7 +129,7 @@ export function CoursePageView({ course }: { course: Course }) {
                       alt={item.imageAlt}
                       fill
                       sizes="33vw"
-                      className="object-cover transition duration-700 group-hover:scale-105"
+                      className={`object-cover transition duration-700 group-hover:scale-105 ${item.imagePosition ?? "object-center"}`}
                     />
                   </div>
                   <div className="p-5">

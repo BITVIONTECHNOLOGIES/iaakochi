@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { EnquireModal } from "@/components/EnquireModal";
 import { Logo } from "@/components/Logo";
 import { MobileMenu } from "@/components/MobileMenu";
 import { nav } from "@/data/site";
@@ -19,7 +18,6 @@ export function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [enquireOpen, setEnquireOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -29,11 +27,11 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = open || enquireOpen ? "hidden" : "";
+    document.body.style.overflow = open ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
-  }, [open, enquireOpen]);
+  }, [open]);
 
   useEffect(() => {
     setOpen(false);
@@ -86,9 +84,8 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <button
-              type="button"
-              onClick={() => setEnquireOpen(true)}
+            <Link
+              href="/contact#enquiry"
               className="hidden rounded-full px-6 py-2.5 text-[0.65rem] font-semibold tracking-[0.16em] uppercase transition-all duration-300 hover:brightness-110 sm:inline-flex"
               style={{
                 background: "linear-gradient(180deg, #4de0b8 0%, #37d7ab 55%, #2bb890 100%)",
@@ -98,7 +95,7 @@ export function Header() {
               }}
             >
               Enquire now
-            </button>
+            </Link>
 
             <button
               type="button"
@@ -127,15 +124,7 @@ export function Header() {
         </div>
       </header>
 
-      <MobileMenu
-        open={open}
-        onClose={() => setOpen(false)}
-        onEnquire={() => {
-          setOpen(false);
-          setEnquireOpen(true);
-        }}
-      />
-      <EnquireModal open={enquireOpen} onClose={() => setEnquireOpen(false)} />
+      <MobileMenu open={open} onClose={() => setOpen(false)} />
     </>
   );
 }

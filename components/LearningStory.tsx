@@ -24,8 +24,8 @@ const stageVisuals = [
   {
     // Practice — hands-on clinical training
     tone: "dark" as const,
-    image: "/images/stage-practice-final.jpg",
-    objectPos: "object-[62%_35%]",
+    image: "/images/campus-clinical-environment.jpg",
+    objectPos: "object-[50%_42%]",
     imageOpacity: "opacity-90",
     overlay:
       "bg-gradient-to-r from-[#06161a]/88 via-[#0c2830]/45 to-transparent md:from-[#06161a]/82 md:via-[#0c2830]/28 md:to-transparent",

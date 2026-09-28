@@ -26,6 +26,7 @@ export type Course = {
   whatsapp: CourseSlug;
   image: string;
   imageAlt: string;
+  imagePosition?: string;
 };
 
 export const flagshipCourses: Course[] = [
@@ -60,7 +61,8 @@ export const flagshipCourses: Course[] = [
     cta: "Explore Course",
     whatsapp: "clinical-cosmetology",
     image: images.cosmetology,
-    imageAlt: "Professional aesthetic facial treatment in a calm clinical setting",
+    imageAlt: "IAA learners in a supervised clinical cosmetology training session",
+    imagePosition: "object-[50%_42%]",
   },
   {
     slug: "spmu",
@@ -93,7 +95,8 @@ export const flagshipCourses: Course[] = [
     cta: "Explore SPMU",
     whatsapp: "spmu",
     image: images.spmu,
-    imageAlt: "Professional makeup artist preparing for a clinical beauty treatment",
+    imageAlt: "IAA faculty guiding learners during a supervised practical session",
+    imagePosition: "object-[50%_30%]",
   },
 ];
 
@@ -122,7 +125,8 @@ export const specialistCourses: Course[] = [
     cta: "Explore Microblading",
     whatsapp: "microblading",
     image: images.microblading,
-    imageAlt: "Close professional view of brow artistry tools and makeup",
+    imageAlt: "Hands-on clinical device training under IAA faculty supervision",
+    imagePosition: "object-[50%_36%]",
   },
   {
     slug: "lip-micropigmentation",
@@ -147,7 +151,8 @@ export const specialistCourses: Course[] = [
     cta: "Explore Lip Micropigmentation",
     whatsapp: "lip-micropigmentation",
     image: images.lip,
-    imageAlt: "Soft natural lip colour and shape in a clinical beauty context",
+    imageAlt: "IAA learners observing a supervised device treatment in the campus training room",
+    imagePosition: "object-[58%_42%]",
   },
   {
     slug: "lash-lift",
@@ -171,7 +176,8 @@ export const specialistCourses: Course[] = [
     cta: "Explore Lash Lift",
     whatsapp: "lash-lift",
     image: images.lash,
-    imageAlt: "Professional lash and beauty tools arranged in a clinical workspace",
+    imageAlt: "IAA faculty demonstrating a facial treatment while learners observe",
+    imagePosition: "object-[50%_58%]",
   },
 ];
 

@@ -46,6 +46,7 @@ export function SpecialistGallery() {
                   sizes="50vw"
                   className={cn(
                     "object-cover transition-transform duration-[800ms] ease-[var(--ease)]",
+                    course.imagePosition ?? "object-center",
                     selected && "scale-[1.06]",
                   )}
                 />

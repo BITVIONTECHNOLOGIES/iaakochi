@@ -148,33 +148,37 @@ export const masterclass = {
 
 export const campusGallery = [
   {
-    src: "/images/clinic-premium.jpg",
+    src: "/images/campus-training-session.jpg",
     caption: "Training room",
-    alt: "Bright modern clinical training room with premium treatment chair",
+    alt: "IAA learners observing a supervised facial treatment in the campus training room",
+    objectPosition: "object-cover object-[50%_42%]",
   },
   {
-    src: "/images/guided-practice-hq.jpg",
+    src: "/images/guided-practice-mentor.png",
     caption: "Guided practice",
-    alt: "IAA mentor providing guided practice guidance from the campus clinic desk",
-    objectPosition: "object-cover object-center",
+    alt: "IAA faculty guiding a medifacial indications session in the training room",
+    objectPosition: "object-cover object-[50%_28%]",
     softOverlay: true,
   },
   {
-    src: "/images/campus-aesthetic-setup.jpg",
+    src: "/images/campus-clinical-tools.jpg",
     caption: "Clinical tools",
-    alt: "Advanced aesthetic treatment device used in clinical training",
+    alt: "Learner using a clinical treatment device under faculty supervision at IAA",
+    objectPosition: "object-cover object-[50%_38%]",
   },
   {
-    src: "/images/campus-instruments-tray2.jpg",
+    src: "/images/campus-clinical-environment.jpg",
     caption: "Clinical environment",
-    alt: "Modern clinical treatment room prepared for practical training",
+    alt: "IAA clinical training room during a supervised device treatment demonstration",
+    objectPosition: "object-cover object-[50%_45%]",
   },
 ];
 
 export const campusWideShot = {
-  src: "/images/campus-facial.jpg",
-  caption: "Clinical environment",
-  alt: "Premium aesthetic facial treatment in a supervised clinical setting",
+  src: "/images/campus-graduates.jpg",
+  caption: "IAA cohort",
+  alt: "IAA faculty and graduates with certificates at the Institute of Advanced Aesthetics",
+  objectPosition: "object-cover object-[50%_32%]",
 };
 
 export const images = {
@@ -182,12 +186,12 @@ export const images = {
   heroDetail: "/images/hero-detail.jpg",
   heroAlt:
     "Professional aesthetic facial treatment in a calm, high-end clinical setting",
-  cosmetology: "/images/cosmetology.jpg",
-  spmu: "/images/spmu.jpg",
-  microblading: "/images/microblading.jpg",
-  lip: "/images/lip.jpg",
-  lash: "/images/lash.jpg",
-  practice: "/images/practice.jpg",
-  campusWide: "/images/campus-facial.jpg",
-  clinicPremium: "/images/clinic-premium.jpg",
+  cosmetology: "/images/campus-training-session.jpg",
+  spmu: "/images/campus-faculty-guide.png",
+  microblading: "/images/campus-clinical-tools.jpg",
+  lip: "/images/course-lip-training.jpg",
+  lash: "/images/course-lash-training.jpg",
+  practice: "/images/campus-clinical-environment.jpg",
+  campusWide: "/images/campus-graduates.jpg",
+  clinicPremium: "/images/campus-clinical-environment.jpg",
 };

@@ -79,7 +79,11 @@ export function CampusGallery({ showIntro = true }: { showIntro?: boolean }) {
             caption={campusWideShot.caption}
             index={5}
             className="aspect-[16/9] min-h-[240px] lg:min-h-[300px]"
-            objectPosition="object-cover object-[50%_35%]"
+            objectPosition={
+              "objectPosition" in campusWideShot && campusWideShot.objectPosition
+                ? campusWideShot.objectPosition
+                : "object-cover object-[50%_30%]"
+            }
           />
 
           <LocationCard />

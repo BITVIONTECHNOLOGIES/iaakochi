@@ -65,7 +65,7 @@ export default function AboutPage() {
 
             <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
               <Link
-                href="/contact"
+                href="/contact#enquiry"
                 className="rounded-full bg-[var(--iaa-turquoise)] px-6 py-2.5 text-[0.68rem] font-semibold tracking-[0.16em] text-[var(--iaa-black)] uppercase shadow-[0_8px_28px_rgba(55,215,171,0.28)] transition hover:bg-[#4de0b8]"
               >
                 Enquire now
@@ -94,7 +94,7 @@ export default function AboutPage() {
           </div>
 
           {/* Certificate showcase */}
-          <div className="relative mx-auto w-full max-w-md lg:mx-0 lg:ml-auto lg:max-w-none">
+          <div className="relative mx-auto w-full max-w-xl lg:mx-0 lg:ml-auto lg:max-w-none">
             <div
               className="pointer-events-none absolute -inset-8 rounded-full opacity-70 blur-3xl"
               style={{
@@ -108,14 +108,14 @@ export default function AboutPage() {
               className="relative overflow-hidden rounded-[1.35rem] border border-white/15 bg-white/[0.06] p-3 shadow-[0_28px_70px_rgba(0,0,0,0.45)] backdrop-blur-md sm:p-4"
               style={{ boxShadow: `0 0 0 1px rgba(196,160,106,0.22), 0 28px 70px rgba(0,0,0,0.45)` }}
             >
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[1rem] bg-[#f7f6f1]">
+              <div className="relative aspect-[1024/723] overflow-hidden rounded-[1rem] bg-[#f7f4ea]">
                 <Image
-                  src="/images/certificate.jpg"
-                  alt="IAA Certificate of Professional Competence"
+                  src="/images/iaa-certificate.jpg"
+                  alt="IAA Certificate of Course Completion — Clinical Cosmetology Assistant"
                   fill
-                  quality={80}
-                  sizes="(max-width: 1024px) 90vw, 480px"
-                  className="object-cover object-center"
+                  quality={90}
+                  sizes="(max-width: 1024px) 92vw, 640px"
+                  className="object-contain object-center"
                   priority
                 />
                 <div

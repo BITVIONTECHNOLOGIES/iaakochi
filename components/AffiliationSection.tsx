@@ -10,7 +10,7 @@ export function AffiliationSection() {
       {/* Warm clinic — readable through soft luxury wash */}
       <div className="absolute inset-0" aria-hidden>
         <Image
-          src="/images/clinic-premium.jpg"
+          src="/images/campus-clinical-environment.jpg"
           alt=""
           fill
           sizes="100vw"

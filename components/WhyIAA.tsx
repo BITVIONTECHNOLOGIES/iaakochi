@@ -80,7 +80,7 @@ export function WhyIAA({ mode = "preview" }: WhyIAAProps) {
             </Link>
           ) : (
             <Link
-              href="/contact"
+              href="/contact#enquiry"
               className="shrink-0 rounded-full bg-[var(--iaa-turquoise)] px-6 py-2.5 text-[0.68rem] font-semibold tracking-[0.16em] text-[var(--iaa-black)] uppercase shadow-[0_10px_30px_rgba(55,215,171,0.28)] transition hover:bg-[#4de0b8]"
             >
               Enquire now →

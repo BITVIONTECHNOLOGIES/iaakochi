@@ -45,7 +45,7 @@ export function PageHero({
         )}
         <div className="mt-10 flex flex-wrap gap-6">
           <Link
-            href="/contact"
+            href="/contact#enquiry"
             className="rounded-full bg-[var(--iaa-turquoise)] px-6 py-2.5 text-[0.68rem] font-semibold tracking-[0.16em] text-[var(--iaa-black)] uppercase transition hover:bg-[#4de0b8]"
           >
             Enquire now

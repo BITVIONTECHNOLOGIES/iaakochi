@@ -16,11 +16,9 @@ function isActivePath(pathname: string, href: string) {
 export function MobileMenu({
   open,
   onClose,
-  onEnquire,
 }: {
   open: boolean;
   onClose: () => void;
-  onEnquire: () => void;
 }) {
   const pathname = usePathname();
 
@@ -70,9 +68,9 @@ export function MobileMenu({
           </nav>
 
           <div className="flex flex-col gap-4">
-            <button
-              type="button"
-              onClick={onEnquire}
+            <Link
+              href="/contact#enquiry"
+              onClick={onClose}
               className="rounded-full px-6 py-3 text-center text-[0.72rem] font-semibold tracking-[0.16em] uppercase"
               style={{
                 background: "linear-gradient(180deg, #4de0b8 0%, #37d7ab 55%, #2bb890 100%)",
@@ -81,7 +79,7 @@ export function MobileMenu({
               }}
             >
               Enquire now
-            </button>
+            </Link>
             <a
               href={whatsappUrl("general")}
               className="text-center text-[0.72rem] tracking-[0.18em] text-white/60 uppercase transition hover:text-[var(--iaa-turquoise)]"
