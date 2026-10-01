@@ -125,8 +125,8 @@ export const specialistCourses: Course[] = [
     cta: "Explore Microblading",
     whatsapp: "microblading",
     image: images.microblading,
-    imageAlt: "Hands-on clinical device training under IAA faculty supervision",
-    imagePosition: "object-[50%_36%]",
+    imageAlt: "Faculty guiding a learner practicing eyebrow microblading on a training mannequin",
+    imagePosition: "object-center",
   },
   {
     slug: "lip-micropigmentation",
@@ -151,8 +151,8 @@ export const specialistCourses: Course[] = [
     cta: "Explore Lip Micropigmentation",
     whatsapp: "lip-micropigmentation",
     image: images.lip,
-    imageAlt: "IAA learners observing a supervised device treatment in the campus training room",
-    imagePosition: "object-[58%_42%]",
+    imageAlt: "Faculty guiding a learner practicing lip micropigmentation on a training mannequin",
+    imagePosition: "object-center",
   },
   {
     slug: "lash-lift",
@@ -176,8 +176,8 @@ export const specialistCourses: Course[] = [
     cta: "Explore Lash Lift",
     whatsapp: "lash-lift",
     image: images.lash,
-    imageAlt: "IAA faculty demonstrating a facial treatment while learners observe",
-    imagePosition: "object-[50%_58%]",
+    imageAlt: "Faculty guiding a learner practicing a lash lift on a training mannequin",
+    imagePosition: "object-center",
   },
 ];
 
