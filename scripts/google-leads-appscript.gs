@@ -1,22 +1,30 @@
 /**
- * IAA Kochi — Google Docs lead collector
+ * IAA Kochi — Google Sheet lead collector
  *
- * SETUP (bind this to your IAA_WEB_LEADS Google Doc):
- * 1. Open the editable Google Doc (not the /pub link).
- * 2. Extensions → Apps Script
- * 3. Paste this entire file and Save.
- * 4. Deploy → New deployment → Type: Web app
+ * The website posts each enquiry here. Google only accepts that post when
+ * the web app is deployed as: Execute as Me, Who has access: Anyone.
+ * Anything stricter returns "Access denied" and the form shows
+ * "Unable to save your enquiry".
+ *
+ * SETUP
+ * 1. Open the IAA leads Google Sheet (create one if you only have a Doc).
+ * 2. Extensions → Apps Script.
+ * 3. Replace the script with this file and Save.
+ * 4. Deploy → Manage deployments → Edit (pencil).
+ *    If this is the first deploy: Deploy → New deployment → Web app.
  *    - Execute as: Me
  *    - Who has access: Anyone
- * 5. Copy the Web App URL into your project `.env.local`:
- *    GOOGLE_LEADS_WEBHOOK_URL=https://script.google.com/macros/s/XXXX/exec
- * 6. Restart the Next.js server.
+ *    - Version: New version
+ * 5. Authorize the script when Google asks.
+ * 6. Copy the Web App URL ending in /exec.
+ *    If it changed, set GOOGLE_LEADS_WEBHOOK_URL in Netlify and redeploy.
  *
- * Field order matches the website enquiry form:
- * Timestamp → Full Name → Phone → Email → Qualification → Course → Message → Source
+ * Columns, in form order:
+ * Timestamp, Full Name, Phone Number, Email, Qualification,
+ * Course Interested In, Message, Source Page
  */
 
-var HEADER_TITLE = "IAA WEB LEADS";
+var SHEET_NAME = "Leads";
 var FIELD_ORDER = [
   "Timestamp",
   "Full Name",
@@ -32,34 +40,19 @@ function doPost(e) {
   try {
     var raw = e && e.postData && e.postData.contents ? e.postData.contents : "{}";
     var data = JSON.parse(raw);
-    var doc = DocumentApp.getActiveDocument();
-    var body = doc.getBody();
+    var sheet = getSheet_();
+    ensureHeader_(sheet);
 
-    ensureHeader_(body);
-
-    var values = {
-      Timestamp: data.submittedAt || new Date().toISOString(),
-      "Full Name": data.fullName || "",
-      "Phone Number": data.phone || "",
-      Email: data.email || "",
-      Qualification: data.qualification || "",
-      "Course Interested In": data.course || "",
-      Message: data.message || "",
-      "Source Page": data.source || "",
-    };
-
-    body.appendParagraph("────────────────────────────────").setForegroundColor("#888888");
-    body.appendParagraph("NEW ENQUIRY").setBold(true).setForegroundColor("#0f766e");
-
-    for (var i = 0; i < FIELD_ORDER.length; i++) {
-      var key = FIELD_ORDER[i];
-      var line = body.appendParagraph(key + ": " + String(values[key] || "—"));
-      line.setForegroundColor("#222222");
-      line.setSpacingAfter(2);
-    }
-
-    body.appendParagraph("");
-    doc.saveAndClose();
+    sheet.appendRow([
+      data.submittedAt || new Date().toISOString(),
+      data.fullName || "",
+      data.phone || "",
+      data.email || "",
+      data.qualification || "",
+      data.course || "",
+      data.message || "",
+      data.source || "",
+    ]);
 
     return json_({ ok: true });
   } catch (err) {
@@ -75,14 +68,18 @@ function doGet() {
   });
 }
 
-function ensureHeader_(body) {
-  if (body.getNumChildren() === 0) {
-    body.appendParagraph(HEADER_TITLE).setHeading(DocumentApp.ParagraphHeading.HEADING1);
-    body.appendParagraph(
-      "Leads collected from iaakochi.com enquiry forms (in form field order)."
-    ).setForegroundColor("#666666");
-    body.appendParagraph("");
-  }
+function getSheet_() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName(SHEET_NAME);
+  if (!sheet) sheet = ss.insertSheet(SHEET_NAME);
+  return sheet;
+}
+
+function ensureHeader_(sheet) {
+  if (sheet.getLastRow() > 0) return;
+  sheet.appendRow(FIELD_ORDER);
+  sheet.setFrozenRows(1);
+  sheet.getRange(1, 1, 1, FIELD_ORDER.length).setFontWeight("bold");
 }
 
 function json_(obj) {
